@@ -1,41 +1,28 @@
 pipeline {
     agent any
 
-
     stages {
         stage('Clone') {
             steps {
-                // Get some code from a GitHub repository
                 git 'https://github.com/ninotahrbx/Brick-Game-9999-in-1.git'
-
             }
-
         }
 
-        // stage('Test') {
-        //     steps {
-        //         // Get some code from a GitHub repository
-        //         sh "mvn test"
-
-        //     }
-
-        // }
+        stage('Test') {
+            steps {
+                sh "mvn test" // Cela exécutera les tests Maven
+            }
+        }
 
         stage('Package') {
             steps {
-                // Get some code from a GitHub repository
-                sh "mvn clean package -DskipTests"
-
+                sh "mvn clean package -DskipTests" // Cela empaquètera le projet en sautant les tests
             }
             post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
                 success {
                     archiveArtifacts 'target/*.jar'
                 }
             }
-
         }
-
     }
 }
