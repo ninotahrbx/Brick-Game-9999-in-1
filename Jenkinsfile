@@ -14,7 +14,7 @@ pipeline {
         // }
         stage('Package') {
             steps {
-                sh "mvn clean package -DskipTests" // Cela empaquètera le projet en sautant les tests
+                sh "mvn clean package -DskipTests=true" // Cela empaquètera le projet en sautant les tests
             }
             post {
                 success {
