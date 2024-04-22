@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Get some code from a GitHub repository
-                bat "mvn test"
+                sh "mvn test"
 
             }
 
@@ -24,7 +24,7 @@ pipeline {
         stage('Package') {
             steps {
                 // Get some code from a GitHub repository
-                bat "mvn clean package -DskipTests"
+                sh "mvn clean package -DskipTests"
 
             }
             post {
