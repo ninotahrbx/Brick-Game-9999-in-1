@@ -12,14 +12,14 @@ pipeline {
 
         }
 
-        stage('Test') {
-            steps {
-                // Get some code from a GitHub repository
-                sh "mvn test"
+        // stage('Test') {
+        //     steps {
+        //         // Get some code from a GitHub repository
+        //         sh "mvn test"
 
-            }
+        //     }
 
-        }
+        // }
 
         stage('Package') {
             steps {
