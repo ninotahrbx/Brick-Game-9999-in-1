@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/ninotahrbx/Brick-Game-9999-in-1.git'
+                // git 'https://github.com/ninotahrbx/Brick-Game-9999-in-1.git'
+                sh "mvn compile"
             }
         }
         stage('Test') {
