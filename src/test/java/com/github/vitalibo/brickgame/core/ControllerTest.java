@@ -6,10 +6,7 @@ import com.github.vitalibo.brickgame.core.ui.IconPanel;
 import com.github.vitalibo.brickgame.game.Game;
 import com.github.vitalibo.brickgame.game.Menu;
 import lombok.experimental.Delegate;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
+import org.mockito.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -20,7 +17,7 @@ import java.util.function.Consumer;
 
 public class ControllerTest {
 
-    @Mock
+    @InjectMocks
     private BrickGameFrame mockFrame;
     @Mock
     private IconPanel mockPause;
