@@ -13,7 +13,7 @@ pipeline {
                 withSonarQubeEnv('Mon-SonarQube') {
                     sh 'sonar-scanner'
                 }
-            }      
+        }      
         // stage('Test') {
         //     steps {
         //         sh "mvn test" // Cela exécutera les tests Maven
@@ -29,6 +29,5 @@ pipeline {
                 }
             }
         }
-
     }
 }
