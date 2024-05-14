@@ -10,7 +10,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                sh 'mvn -Dskiptest=true sonar:sonar -Dsonar.projectKey=projet-brick -Dsonar.projectName='projet-brick' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_71778798eaa3e8715a3f6a7770644256dd779169'
+                sh "mvn -Dskiptest=true sonar:sonar -Dsonar.projectKey=projet-brick -Dsonar.projectName='projet-brick' -Dsonar.host.url='http://localhost:9000' -Dsonar.token=sqp_71778798eaa3e8715a3f6a7770644256dd779169"
             }
         } 
         // stage('Test') {
